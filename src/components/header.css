@@ -1,0 +1,16 @@
+header {
+  display: flex !important;
+  flex-direction: row;
+  margin: auto;
+  justify-content: center;
+  padding: 20px;
+  
+}
+
+.book-icon {
+  margin-right: 10px;
+}
+
+.appName {  
+  font-weight: 700;
+}
