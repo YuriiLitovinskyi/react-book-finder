@@ -1,5 +1,6 @@
 import React from 'react';
 import Search from './search';
+import BookList from './bookList';
 import axios from 'axios';
 
 class Books extends React.Component {
@@ -17,6 +18,11 @@ class Books extends React.Component {
       .get("https://www.googleapis.com/books/v1/volumes?q=" + this.state.searchField)
       .then((response) => {
         console.log(response);
+        this.setState({
+          books: response.data.items
+        }, () => {
+          console.log(this.state.books);
+        })
       })
       .catch((error) => {
         console.log(error);
@@ -35,6 +41,7 @@ class Books extends React.Component {
     return (
       <div>
          <Search handleSearch={this.handleSearch} searchBook={this.searchBook} />
+         <BookList  books={this.state.books}/>
       </div>      
     );
   }  
