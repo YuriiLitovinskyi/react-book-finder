@@ -13,7 +13,8 @@ const Search = (props) => {
                  className="form-control" 
                  aria-label="Sizing example input" 
                  aria-describedby="inputGroup-sizing-lg" />
-            <button 
+            <button
+                  onClick={props.searchBook} 
                   type="button" 
                   className="btn btn-info btn-search"
                   >Search</button>

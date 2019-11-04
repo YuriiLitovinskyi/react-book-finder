@@ -1,5 +1,6 @@
 import React from 'react';
 import Search from './search';
+import axios from 'axios';
 
 class Books extends React.Component {
   constructor(props){
@@ -8,6 +9,19 @@ class Books extends React.Component {
       books: [],
       searchField: ''
     }
+  }
+
+  searchBook = (e) => {
+    e.preventDefault();
+    axios
+      .get("https://www.googleapis.com/books/v1/volumes?q=" + this.state.searchField)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+    
   }
 
   handleSearch = (event) => {
@@ -20,7 +34,7 @@ class Books extends React.Component {
   render() {
     return (
       <div>
-         <Search handleSearch={this.handleSearch}/>
+         <Search handleSearch={this.handleSearch} searchBook={this.searchBook} />
       </div>      
     );
   }  
