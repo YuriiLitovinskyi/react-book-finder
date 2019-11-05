@@ -7,8 +7,9 @@ class Books extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      books: [],
-      searchField: ''
+      books: [],     
+      searchField: '',
+      noMatch: false
     }
   }
 
@@ -19,13 +20,22 @@ class Books extends React.Component {
       .then((response) => {
         console.log(response);
         this.setState({
-          books: response.data.items
+          books: [...response.data.items],
+          totalItems: response.data.totalItems,
+          noMatch: false
         }, () => {
           console.log(this.state.books);
+          console.log(this.state.totalItems);
         })
       })
       .catch((error) => {
         console.log(error);
+        if (error instanceof TypeError) {
+          console.log("No match!");
+          this.setState({
+            noMatch: true
+          })       
+        }
       })
     
   }
@@ -41,7 +51,7 @@ class Books extends React.Component {
     return (
       <div>
          <Search handleSearch={this.handleSearch} searchBook={this.searchBook} />
-         <BookList  books={this.state.books}/>
+         <BookList  books={this.state.books} noMatch={this.state.noMatch}/>
       </div>      
     );
   }  

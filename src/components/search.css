@@ -9,3 +9,9 @@
   padding: 0;
   border-radius: 0px !important;  
 }
+
+.input-group-text {
+	background-color: #538271 !important;
+	color: white !important;
+}
+
