@@ -1,17 +1,20 @@
 import React from 'react';
-//import './header.css';
+import './bookCard.css';
 
 const BookCard = (props) => {
-	return(
-		<div className="card-container">
-		   <img src={props.image} alt="" />
-		   <div>
-		      <h2>{props.title}</h2>
-		      <h3>{props.author}</h3>
-		      <p>{props.published}</p>
-		   </div>
-		</div>
-
+	return(		
+		
+		<div className="card">
+			<a href={props.reference} target="_blank" rel="noopener noreferrer">
+			  <img src={props.image} className="card-img-top" alt="Book" />
+			</a>
+			  <div className="card-body">
+			    <h5 className="card-title">{props.title}</h5>
+			    <h6 className="card-text">{props.author}</h6>
+			    <h6 className="card-text">{props.published}</h6>
+			    <h6 className="card-text">Language: {props.language}</h6>			    		    
+			  </div>
+		</div>	
 	)
 }
 

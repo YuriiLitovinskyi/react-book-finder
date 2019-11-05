@@ -2,6 +2,7 @@
   max-width: 100vh;
   display: block;
   margin: auto;
+  margin-bottom: 50px;
 }
 
 .btn-search {  

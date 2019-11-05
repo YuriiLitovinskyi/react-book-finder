@@ -1,5 +1,5 @@
 import React from 'react';
-//import './header.css';
+import './bookList.css';
 import BookCard from './bookCard';
 
 const BookList = (props) => {
@@ -13,6 +13,8 @@ const BookList = (props) => {
 		   		            title={book.volumeInfo.title}
 		   		            author={book.volumeInfo.authors}
 		   		            published={book.volumeInfo.publishedDate}
+		   		            reference={book.volumeInfo.infoLink}
+		   		            language={book.volumeInfo.language}
 		   		        />
 		   	}) 
 		   }
