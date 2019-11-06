@@ -5,7 +5,9 @@
 	border-radius: 10px !important;
 	overflow: hidden;
 	color: #636364;   
+	margin-bottom: 30px;
 }
+
 .card-body {
 	padding: 0.5rem !important;	
 }
