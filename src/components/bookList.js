@@ -4,7 +4,7 @@ import BookCard from './bookCard';
 
 const BookList = (props) => {
 	if  (props.noMatch === true) {		        
-		   		return <div>No Match!</div>
+		   		return <div className="noMatch">No Match!</div>
 		   	} else {
 		   		return(
 					<div className="list">
@@ -13,7 +13,7 @@ const BookList = (props) => {
 					   		return (
 					   			<BookCard 
 					   		            key={i}
-					   		            image={book.volumeInfo.imageLinks.thumbnail}
+					   		            image={book.volumeInfo.imageLinks === undefined ? "" : book.volumeInfo.imageLinks.thumbnail}
 					   		            title={book.volumeInfo.title}
 					   		            author={book.volumeInfo.authors}
 					   		            published={book.volumeInfo.publishedDate}
@@ -30,3 +30,4 @@ const BookList = (props) => {
 }
 
 export default BookList;
+
