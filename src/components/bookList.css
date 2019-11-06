@@ -13,3 +13,16 @@
 
 }
 
+@media (max-width: 1200px){
+    .list {
+      grid-template-columns: repeat(2, 1fr) !important;
+      grid-template-rows: auto 1fr auto !important;              
+    }
+  }
+
+  @media (max-width: 800px){
+    .list {
+      grid-template-columns: repeat(1, 1fr) !important;
+      grid-template-rows: auto 1fr auto !important;              
+    }
+  }
