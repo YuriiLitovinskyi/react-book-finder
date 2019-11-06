@@ -13,6 +13,7 @@ const Search = (props) => {
              type="text" 
              className="form-control" 
              required
+             onKeyDown={props._handleKeyDown}
              aria-label="Sizing example input" 
              aria-describedby="inputGroup-sizing-lg" 
              />

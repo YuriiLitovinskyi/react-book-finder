@@ -13,6 +13,12 @@ class Books extends React.Component {
     }
   }
 
+  _handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      console.log('Enter key was pressed...');
+    }
+  }
+
   searchBook = (e) => {
     e.preventDefault();
     axios
@@ -50,7 +56,7 @@ class Books extends React.Component {
   render() {
     return (
       <div>
-         <Search handleSearch={this.handleSearch} searchBook={this.searchBook} />
+         <Search handleSearch={this.handleSearch} searchBook={this.searchBook} _handleKeyDown={this._handleKeyDown} />
          <BookList  books={this.state.books} noMatch={this.state.noMatch}/>
       </div>      
     );
