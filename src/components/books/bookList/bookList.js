@@ -1,6 +1,6 @@
 import React from 'react';
 import './bookList.css';
-import BookCard from './bookCard';
+import BookCard from './bookCard/bookCard';
 
 const BookList = (props) => {
 	if  (props.noMatch === true) {		        

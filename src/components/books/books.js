@@ -1,6 +1,6 @@
 import React from 'react';
-import Search from './search';
-import BookList from './bookList';
+import Search from './search/search';
+import BookList from './bookList/bookList';
 import axios from 'axios';
 
 class Books extends React.Component {
@@ -13,31 +13,33 @@ class Books extends React.Component {
     }
   }
 
+  //Search pressing Enter on keyboard 
   _handleKeyDown = (e) => {
     if (e.key === 'Enter') {
-      console.log('Enter key was pressed...');
+      //console.log('Enter key was pressed...');
     }
   }
 
+  //Get books data from Google APIs
   searchBook = (e) => {
     e.preventDefault();
     axios
       .get("https://www.googleapis.com/books/v1/volumes?q=" + this.state.searchField)
       .then((response) => {
-        console.log(response);
+        //console.log(response);
         this.setState({
           books: [...response.data.items],
           totalItems: response.data.totalItems,
           noMatch: false
         }, () => {
-          console.log(this.state.books);
-          console.log(this.state.totalItems);
+          //console.log(this.state.books);
+          //console.log(this.state.totalItems);
         })
       })
       .catch((error) => {
         console.log(error);
         if (error instanceof TypeError) {
-          console.log("No match!");
+          //console.log("No match!");
           this.setState({
             noMatch: true
           })       
