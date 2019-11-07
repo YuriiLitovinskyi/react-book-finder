@@ -13,7 +13,7 @@ const BookList = (props) => {
 					   		return (
 					   			<BookCard 
 					   		            key={i}
-					   		            image={book.volumeInfo.imageLinks === undefined ? "" : book.volumeInfo.imageLinks.thumbnail}
+					   		            image={book.volumeInfo.imageLinks === undefined ? "" : book.volumeInfo.imageLinks.thumbnail.replace("http", "https")}
 					   		            title={book.volumeInfo.title}
 					   		            author={book.volumeInfo.authors}
 					   		            published={book.volumeInfo.publishedDate}

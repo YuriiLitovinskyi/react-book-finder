@@ -11,6 +11,7 @@ class Books extends React.Component {
       searchField: '',
       noMatch: false
     }
+   
   }
 
   //Search pressing Enter on keyboard 
@@ -55,11 +56,19 @@ class Books extends React.Component {
     //console.log(event.target.value);
   }
 
+  // imageDataHandling = () => {
+  //   if ( this.state.books.volumeInfo.imageLinks === undefined ) {
+  //     return ""
+  //   } else {
+  //     return this.state.books.volumeInfo.imageLinks.thumbnail
+  //   }   
+  // } 
+
   render() {
     return (
       <div>
          <Search handleSearch={this.handleSearch} searchBook={this.searchBook} _handleKeyDown={this._handleKeyDown} />
-         <BookList  books={this.state.books} noMatch={this.state.noMatch}/>
+         <BookList  books={this.state.books} noMatch={this.state.noMatch} />
       </div>      
     );
   }  
