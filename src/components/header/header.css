@@ -3,8 +3,7 @@ header {
   flex-direction: row;
   margin: auto;
   justify-content: center;
-  padding: 20px;
-  
+  padding: 20px; 
 }
 
 .book-icon {

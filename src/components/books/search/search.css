@@ -1,6 +1,5 @@
 .input-for-book {
-  max-width: 100vh;
-  display: block;
+  max-width: 100vh;  
   margin: auto;
   margin-bottom: 50px;
 }
